@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "OPERATEST": "set CHROME_BIN=C:\\Users\\diego\\AppData\\Local\\Programs\\Opera GX\\opera.exe && ng test --code-coverage --watch=false --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
