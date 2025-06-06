@@ -17,6 +17,7 @@ export class SoldierListComponent {
 
   refresh() {
     this.soldiers = this.soldierService.getSoldiers();
+    this.soldierService.addRandomSoldiers();
   }
 
   viewDetails(id: number): void {
