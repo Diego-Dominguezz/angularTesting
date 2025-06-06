@@ -1,0 +1,30 @@
+<h2>{{ isEdit ? 'Editar Soldado' : 'Agregar Soldado' }}</h2>
+<form (ngSubmit)="saveSoldier()" #soldierForm="ngForm">
+  <label>
+    Nombre:
+    <input [(ngModel)]="soldier.name" name="name" required />
+  </label>
+  <br>
+  <label>
+    Rango:
+    <input [(ngModel)]="soldier.rank" name="rank" required />
+  </label>
+  <br>
+  <label>
+    Especializaciones (separadas por coma):
+    <input [(ngModel)]="specializations" name="specializations" />
+  </label>
+  <br>
+  <label>
+    Fecha de Ingreso:
+    <input [(ngModel)]="soldier.joinDate" name="joinDate" type="date" required />
+  </label>
+  <br>
+  <label>
+    Activo:
+    <input [(ngModel)]="soldier.isActive" name="isActive" type="checkbox" />
+  </label>
+  <br>
+  <button type="submit" [disabled]="!soldierForm.form.valid">Guardar</button>
+  <button type="button" (click)="router.navigate(['/'])">Cancelar</button>
+</form>

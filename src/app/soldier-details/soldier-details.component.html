@@ -1,0 +1,12 @@
+<h2>Detalles del Soldado</h2>
+<div *ngIf="soldier; else notFound">
+  <p><strong>Nombre:</strong> {{ soldier.name }}</p>
+  <p><strong>Rango:</strong> {{ soldier.rank }}</p>
+  <p><strong>Especializaciones:</strong> {{ soldier.specializations.join(', ') }}</p>
+  <p><strong>Fecha de Ingreso:</strong> {{ soldier.joinDate }}</p>
+  <p><strong>Activo:</strong> {{ soldier.isActive ? 'Sí' : 'No' }}</p>
+  <button (click)="router.navigate(['/'])">Volver</button>
+</div>
+<ng-template #notFound>
+  <p>Soldado no encontrado.</p>
+</ng-template>

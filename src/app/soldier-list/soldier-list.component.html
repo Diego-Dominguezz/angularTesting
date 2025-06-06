@@ -1,0 +1,32 @@
+<h2>Lista de Soldados</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Rango</th>
+      <th>Especializaciones</th>
+      <th>Fecha de Ingreso</th>
+      <th>Activo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let soldier of soldiers">
+      <td>{{ soldier.name }}</td>
+      <td>{{ soldier.rank }}</td>
+      <td>{{ soldier.specializations.join(', ') }}</td>
+      <td>{{ soldier.joinDate }}</td>
+      <td>
+        <span [style.color]="soldier.isActive ? '#218c29' : '#888'">
+          {{ soldier.isActive ? 'Sí' : 'No' }}
+        </span>
+      </td>
+      <td>
+        <button (click)="viewDetails(soldier.id)">Detalles</button>
+        <button (click)="editSoldier(soldier.id)">Editar</button>
+        <button (click)="deleteSoldier(soldier.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button class="add-btn" (click)="addSoldier()">Agregar Soldado</button>

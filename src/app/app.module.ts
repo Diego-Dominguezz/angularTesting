@@ -1,18 +1,23 @@
+// app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { SoldierService } from './soldier.service';
+import { SoldierListComponent } from './soldier-list/soldier-list.component';
+import { SoldierFormComponent } from './soldier-form/soldier-form.component';
+import { SoldierDetailsComponent } from './soldier-details/soldier-details.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SoldierListComponent,
+    SoldierFormComponent,
+    SoldierDetailsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  providers: [SoldierService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
