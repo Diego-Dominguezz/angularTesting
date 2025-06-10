@@ -1,13 +1,14 @@
 {
   "name": "testing-example",
-  "version": "0.0.0",
-  "scripts": {
+  "version": "0.0.0",  "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "OPERATEST": "set CHROME_BIN=C:\\Users\\diego\\AppData\\Local\\Programs\\Opera GX\\opera.exe && ng test --code-coverage --watch=false --browsers=ChromeHeadless"
+    "test:chrome": "set CHROME_BIN=C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe && ng test --code-coverage --watch=false --browsers=ChromeHeadless",
+    "test:opera": "set CHROME_BIN=C:\\Users\\diego\\AppData\\Local\\Programs\\Opera GX\\opera.exe && ng test --code-coverage --watch=false --browsers=ChromeHeadless",
+    "OPERATEST": "set CHROME_BIN=C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe && ng test --code-coverage --watch=false --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
